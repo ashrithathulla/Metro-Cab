@@ -6,7 +6,7 @@ import uuid
 
 # ---------------- QR GENERATION FUNCTION ----------------
 def generate_qr(data):
-    qr = qrcode.QRCode(version=None, box_size=10, border=4)
+    qr = qrcode.QRCode(version=1, box_size=10, border=4)
     qr.add_data(data)
     qr.make(fit=True)
     img = qr.make_image(fill_color="black", back_color="white")
@@ -87,3 +87,4 @@ if st.button("Book"):
         st.write(f"*Total Paid:* {total_amount}")
 
         st.image(buf.getvalue(),width=250)
+
